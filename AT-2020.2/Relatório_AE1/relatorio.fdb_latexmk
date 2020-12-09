@@ -1,15 +1,7 @@
 # Fdb version 3
-["bibtex relatorio"] 1607475994 "relatorio.aux" "relatorio.bbl" "relatorio" 1607479299
-  "/usr/share/texlive/texmf-dist/bibtex/bib/abntex2/abntex2-options.bib" 1357081713 5396 4eb260dac60f150ae608d45252853090 ""
-  "/usr/share/texlive/texmf-dist/bibtex/bst/abntex2/abntex2-alf.bst" 1543183680 60064 0819ac8568f9a482510a46e3a8a6f605 ""
-  "referencias.bib" 1607380495 13034 a0bc9e310d7209e8ff211d322fb5f872 ""
-  "relatorio.aux" 1607479299 12336 f040f6bd343eb73f21fd63e4b345fb39 "pdflatex"
-  (generated)
-  "relatorio.blg"
-  "relatorio.bbl"
-["pdflatex"] 1607479298 "/home/saromtorres/Documentos/COM1/AT-2020.2/Relatório_AE1/relatorio.tex" "/home/saromtorres/Documentos/COM1/AT-2020.2/Relatório_AE1/relatorio.pdf" "relatorio" 1607479299
-  "/home/saromtorres/Documentos/COM1/AT-2020.2/Relatório_AE1/relatorio.aux" 1607479299 12336 f040f6bd343eb73f21fd63e4b345fb39 ""
-  "/home/saromtorres/Documentos/COM1/AT-2020.2/Relatório_AE1/relatorio.tex" 1607479298 17437 50008e7e6b6551bbe3780f5a220a975d ""
+["pdflatex"] 1607480390 "/home/saromtorres/Documentos/COM1/AT-2020.2/Relatório_AE1/relatorio.tex" "/home/saromtorres/Documentos/COM1/AT-2020.2/Relatório_AE1/relatorio.pdf" "relatorio" 1607480392
+  "/home/saromtorres/Documentos/COM1/AT-2020.2/Relatório_AE1/relatorio.aux" 1607480392 12298 4cd40474955c98ec2f22175996126b38 ""
+  "/home/saromtorres/Documentos/COM1/AT-2020.2/Relatório_AE1/relatorio.tex" 1607480388 17605 26f9a014d1ab1a195f79895872b76307 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1605199218 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -309,14 +301,13 @@
   "figuras/ruido_filtro.png" 1607387163 12874 e4b4163ffaf9ddb04015a6e0975e1184 ""
   "figuras/ruido_gau.png" 1607387167 7406 ff743cdf4128500c794bca0928a8fc92 ""
   "figuras/ruido_tempo.png" 1607387170 9228 527590595d6f3a89b38caa69685efcf8 ""
-  "relatorio.aux" 1607479299 12336 f040f6bd343eb73f21fd63e4b345fb39 "pdflatex"
-  "relatorio.bbl" 1607475994 227 d84c02311c5966f0b465e2fbb354c9df "bibtex relatorio"
-  "relatorio.tex" 1607479298 17437 50008e7e6b6551bbe3780f5a220a975d ""
-  "relatorio.toc" 1607479299 1850 f5d7ca23cd9d1792193aeaccebb9e845 "pdflatex"
+  "relatorio.aux" 1607480392 12298 4cd40474955c98ec2f22175996126b38 "pdflatex"
+  "relatorio.tex" 1607480388 17605 26f9a014d1ab1a195f79895872b76307 ""
+  "relatorio.toc" 1607480392 1851 e4919177e5f44f8a181a218062fda3a8 "pdflatex"
   (generated)
-  "relatorio.log"
   "relatorio.toc"
   "relatorio.aux"
   "relatorio.pdf"
+  "relatorio.log"
   "/home/saromtorres/Documentos/COM1/AT-2020.2/Relatório_AE1/relatorio.log"
   "/home/saromtorres/Documentos/COM1/AT-2020.2/Relatório_AE1/relatorio.pdf"

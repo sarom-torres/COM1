@@ -8,7 +8,7 @@ clc; clear all; close all;
 
 fs= 10e3;
 ts = 1/fs;
-t = [0:ts:1-ts]
+t = [0:ts:1-ts];
 
 %RUIDO
 ruido = randn(size(t));

@@ -203,6 +203,7 @@ Ao fazer a transformada do sinal aparece um impulso na frequência negativa de i
 
 Além disso, o espectro da \autoref{fig:q1_sen_f}-d mostra as três frequências existentes no sinal s(t) que são oriundas dos sinais que compões o somatório (\autoref{eq:y1}, \autoref{eq:y2}, \autoref{eq:y3}).
 
+\newpage
 \subsubsection{Potência média}
 
 Para descobrir potência média do sinal s(t) foi utilizada a \autoref{eq:pot}. Portanto, na simulação foi usada a função \texttt{norm} do Matlab, a qual faz o cálculo do módulo de um vetor, seu resultado foi elevado ao quadrado e divido pelo tamanho do vetor. Dessa foma, se obteve o valor de 28 \textit{Watts} de potência média do sinal.
@@ -222,7 +223,7 @@ Para calcular a densidade espectral de potência foi utilizada a função \textt
 
 A \autoref{fig:q1_dep} mostra a DEP do sinal s(t) com 30 amostras. Pode-se observar que a potência do sinal está concentrada nas frequências de 1kHz, 3kHz e 5kHz, sendo que há pouca energia nas demais frequências. 
 
-
+\newpage
 %------------------------------|
 %       Atividade 2            |
 %------------------------------|
@@ -310,7 +311,8 @@ Como é possível observar na \autoref{fig:sinais_filt} quando o sinal foi filtr
 \subsection{Atividade 3}
 \label{sec:A3}
 
-Neste exercício foi gerado um vetor gaussiano (\autoref{fig:dist_gau}) para representar um ruído branco. Além disso foi gerado um filtro com frequência de corte de 10 kHz para fazer a filtragem do ruido.
+Neste exercício foi gerado um vetor gaussiano (\autoref{fig:dist_gau}) para representar um sinal de ruído branco de duração de 1 segundo. A amostragem utilizada a fim de gerar 1 segundo de ruído branco foi de 10kHz.
+Além disso foi gerado um filtro com frequência de corte de 10 kHz para fazer a filtragem do ruido.
 É possível observar o ruido plotado no domínio do tempo(\autoref{fig:ruido_te}). 
 
 \begin{figure}[ht]
@@ -340,6 +342,7 @@ A \autoref{fig:autoruido_te} apresenta a autocorrelação do sinal ruído no qua
 
 Após a passagem pelo filtro o sinal apresenta o comportamento da \autoref{fig:ruido_fil} e é possível observar o histograma e ver que permanece com uma distribuição gaussiana
 
+\newpage
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.6\linewidth]{figuras/ruido_filtro.png}
@@ -354,6 +357,7 @@ Após a passagem pelo filtro o sinal apresenta o comportamento da \autoref{fig:r
     \label{fig:hist_ruido}
 \end{figure}
 
+\newpage
 \section{Conclusão}
 \label{sec:conclusão}
 
@@ -365,7 +369,7 @@ O presente trabalho fortaleceu os conhecimentos revisados na disciplina de Siste
 \section{Códigos desenvolvidos}
 \label{sec:code_dev}
 
-Segue o \href{https://github.com/sarom-torres/COM1/tree/master/AE1}{link}
+Segue o \href{https://github.com/sarom-torres/COM1/tree/master/AT-2020.2/Codigos_AE1}{link}
  para o acesso aos códigos.
 
 
@@ -373,7 +377,7 @@ Segue o \href{https://github.com/sarom-torres/COM1/tree/master/AE1}{link}
 % ----------------------------------------------------------
 % Referências bibliográficas
 % ----------------------------------------------------------
-\bibliography{referencias}
+%\bibliography{referencias}
 \end{document}
 
 
