@@ -42,21 +42,28 @@ Y3 = fft(y3)/length(y3);
 Sf = fft(st)/length(st);
 
 %FILTROS
-%f2 = 5e3;
-%N = 10; %numero de amostras
-%fs = f2*N; %frequencia de amostragem
+ord = 100;
+wn1 = (2e3*2)/fs;
+wn2 = (4e3*2)/fs;
+filtro_PB = fir1(ord,wn1,'low');
+filtro_PA = fir1(ord,wn2,'high');
+filtro_PF = fir1(ord,[wn1 wn2]);
 
-wn1 = (2e3)*2/fs;
-wn2 = (4e3)*2/fs;
-filtro_PB = fir1(50,wn1,'low');
-filtro_PA = fir1(50,wn2,'high');
-filtro_PF = fir1(50,[wn1 wn2]);
-%filtro_PF = fir1(50,wn1,'low') - fir1(50,wn2,'high');
 
 %SINAIS FILTRADOS
-st_filt_PB = filter(filtro_PB,1,st);
-st_filt_PA = filter(filtro_PA,1,st);
-st_filt_PF = filter(filtro_PF,1,st);
+st_filt_PB = conv(st,filtro_PB);
+st_filt_PB = st_filt_PB(1:end-(ord));
+
+st_filt_PA = conv(st,filtro_PA);
+st_filt_PA = st_filt_PA(1:end-(ord));
+
+st_filt_PF = conv(st,filtro_PF);
+st_filt_PF = st_filt_PF(1:end-(ord));
+
+%SINAIS FILTRADOS
+%st_filt_PB = filter(filtro_PB,1,st);
+%st_filt_PA = filter(filtro_PA,1,st);
+%st_filt_PF = filter(filtro_PF,1,st);
 
 %TRANSFORMADAS DOS SINAIS FILTRADOS
 Sf_filt_PB = fft(st_filt_PB)/length(st_filt_PB);
@@ -130,24 +137,9 @@ xlabel('Frequência (kHz)');
 ylabel('Amplitude (V)');
 title('(h)');
 
-
 %PLOT FILTROS
-
-%[h,w] = freqz(filtro_PB);
-%figure(2)
-%plot(w/pi,20*log10(abs(h)))
-%hold on
-%plot(w(18),20*log10(abs(h(18))),'r*')
-%text(0.1,20*log10(h(18)),'\leftarrow Frequência de Corte')
-%ylim([-120 10]);
-%xticks([0:.1:1]);
-%xlabel('Normalized Frequency (\times\pi rad/sample)')
-%ylabel('Magnitude (dB)')
-
-
 figure(2)
-freqz(filtro_PB);
-xticks([0:.1:1]);
+freqz(filtro_PB)
 figure(3)
 freqz(filtro_PA)
 figure(4)
@@ -180,27 +172,96 @@ title('Sinal s(t) após filtro passa-faixa de 2kHz-4kHz');
 
 subplot(322);
 plot(freq/1e3,abs(fftshift(Sf_filt_PB)),'-mo','LineWidth',2);
+grid on
 axis([(-f2/1e3-2) (f2/1e3+2) 0 4 ])
+xticks([-5 -3 -1 0 1 3 5])
 xlabel('Frequência (kHz)');
 ylabel('Amplitude (V)');
 title('Espectro de s(t) após filtro passa-baixa de 2kHz');
 
 subplot(324);
 plot(freq/1e3,abs(fftshift(Sf_filt_PA)),'-bo','LineWidth',2);
+grid on
 axis([(-f2/1e3-2) (f2/1e3+2) 0 2 ])
+xticks([-5 -3 -1 0 1 3 5])
 xlabel('Frequência (kHz)');
 ylabel('Amplitude (V)');
 title('Espectro de s(t) após filtro passa-alta de 4kHz');
 
 subplot(326);
 plot(freq/1e3,abs(fftshift(Sf_filt_PF)),'-ro','LineWidth',2);
+grid on
 axis([(-f2/1e3-2) (f2/1e3+2) 0 4 ])
+xticks([-5 -3 -1 0 1 3 5])
 xlabel('Frequência (kHz)');
 ylabel('Amplitude (V)');
 title('Espectro de s(t) após filtro passa-faixa de 2kHz-4kHz');
+
+
+
+%-----------------|
+%   Plot FPB      |
+%-----------------|
+
+%[h,w] = freqz(filtro_PB);
+
+%figure(2)
+%plot(w/pi,20*log10(abs(h)),'b','LineWidth',2)
+%grid on
+%hold on
+%plot(w(15)/pi,20*log10(abs(h(15))),'r*','LineWidth',2)
+%text(w(15)/pi,20*log10(abs(h(15))),'\leftarrow Frequência de Corte')
+%xlim([0 1]);
+%ylim([-120 10]);
+%xticks([0:.1:1]);
+
+%xlabel('Normalized Frequency (\times\pi rad/sample)')
+%ylabel('Magnitude (dB)')
+%title('Filtro Passa Baixa com frequência de corte 2kHz');
+
+%-----------------|
+%   Plot FPA      |
+%-----------------|
+
+%[h2,w2] = freqz(filtro_PA);
+
+%figure(3)
+%plot(w2/pi,20*log10(abs(h2)),'b','LineWidth',2)
+%grid on
+%hold on
+%plot(w2(28)/pi,20*log10(abs(h2(28))),'r*')
+%text(w2(28)/pi,20*log10(abs(h2(28))),'\leftarrow Frequência de Corte')
+%xlim([0 1]);
+%ylim([-5 1]);
+%xticks([0:.2:1]);
+%xlabel('Normalized Frequency (\times\pi rad/sample)')
+%ylabel('Magnitude (dB)')
+%title('Filtro Passa Alta com frequência de corte 4kHz');
+
+
+%-----------------|
+%   Plot FPF      |
+%-----------------|
+
+%[h3,w3] = freqz(filtro_PF);
+
+%figure(4)
+%plot(w3/pi,20*log10(abs(h3)),'b')
+%grid on
+%xlim([0 1]);
+%ylim([-130 10]);
+%xticks([0:.2:1]);
+%xlabel('Normalized Frequency (\times\pi rad/sample)')
+%ylabel('Magnitude (dB)')
+%title('Filtro Passa Fixa com frequência de corte de 2KHz à 4kHz');
+
+%-------------------------------------------------------------------------------|
+
 
 ##% !!!! NÃO ESTÁ CORRETO
 ##
 ##subplot(313);
 ##plot(freq,abs(fftshift(Sf_filt_PF)));
 ##axis([(-f2-2e3) (f2+2e3) -4 4])
+
+
